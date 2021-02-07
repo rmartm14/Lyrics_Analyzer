@@ -1,0 +1,5 @@
+1. Instalar los modulos
+2. Registrarse en la api
+3. Ir mirando lo que da cada parametro.
+
+Mirar la biblioteca request
