@@ -1,7 +1,7 @@
 <template>
   <v-container class="fondo">
     <v-row>
-      <v-col>
+      <v-col cols="6">
         <h1 id="initTitle">
           Lyrics Analyzer
         </h1>
@@ -9,10 +9,32 @@
         <h5 id="subInit">
           A place where we love to analyze music
         </h5>
+        <p class="letras">
+          Do you want to analyze what you're singing? This is the place where
+          you can know it. We have a variety of artist to compare with and also,
+          you can add the song by text or with voice recognition.
+        </p>
       </v-col>
-      <v-col>
-        <v-img class="imgRight" :src="this.image" />
-      </v-col>
+
+      <v-img
+        v-for="image in this.images"
+        :src="image.src"
+        :alt="image.alt"
+        :key="image.id"
+        class="imgRight"
+      />
+    </v-row>
+    <v-row class="mt-6">
+      <v-spacer></v-spacer>
+      <p class="letras_centered">
+        Do you want to start?
+      </p>
+      <v-spacer></v-spacer>
+    </v-row>
+    <v-row class="mt-6">
+      <v-spacer></v-spacer>
+      <v-btn outlined>Start</v-btn>
+      <v-spacer></v-spacer>
     </v-row>
   </v-container>
 </template>
@@ -26,29 +48,15 @@ export default {
       {
         id: 1,
         src: require("./../../assets/beatlesAR.jpg"),
+        alt: "The Beatles",
       },
       {
         id: 2,
         src: require("./../../assets/RollingStones.jpg"),
+        alt: "Rolling Stones",
       },
     ],
-    image: require("./../../assets/beatlesAR.jpg"),
   }),
-  mounted() {
-    setInterval(this.switchImage(), 3000);
-  },
-  methods: {
-    switchImage() {
-      if (this.photoIndex < this.images.length) {
-        this.photoIndex = this.photoIndex + 1;
-        console.log("aqui");
-      } else {
-        this.photoIndex = 0;
-        console.log("alli");
-      }
-      this.image = this.images[this.photoIndex].src;
-    },
-  },
 };
 </script>
 
@@ -58,7 +66,7 @@ export default {
   font-family: "Open Sans", sans-serif;
   font-size: 60px;
   font-weight: 600;
-  line-height: 32px;
+  line-height: 50px;
   margin: 100px 30px 4px 30px;
   text-align: left;
 }
@@ -71,12 +79,31 @@ export default {
   margin: 10px 30px 0px 30px;
   text-align: left;
 }
+.letras {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 40px;
+  margin: 10px 30px 0px 30px;
+  text-align: justify;
+}
+.letras_centered {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 40px;
+  margin: 10px 30px 0px 30px;
+  text-align: center;
+}
 .fondo {
   background-color: "#ffe3de";
 }
 .imgRight {
-  height: 600px;
-  width: 600px;
+  height: 300px;
+  width: 300px;
   margin-top: 70px;
+  border-radius: 25%;
 }
 </style>
