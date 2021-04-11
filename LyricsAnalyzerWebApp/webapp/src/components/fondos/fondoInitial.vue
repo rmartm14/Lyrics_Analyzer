@@ -1,6 +1,6 @@
 <template>
   <v-container class="fondo">
-    <v-row>
+    <v-row class="mb-12">
       <v-col cols="6">
         <h1 id="initTitle">
           Lyrics Analyzer
@@ -24,6 +24,8 @@
         class="imgRight"
       />
     </v-row>
+    <v-spacer></v-spacer>
+    <v-divider></v-divider>
     <v-row class="mt-6">
       <v-spacer></v-spacer>
       <p class="letras_centered">
@@ -33,7 +35,7 @@
     </v-row>
     <v-row class="mt-6">
       <v-spacer></v-spacer>
-      <v-btn outlined>Start</v-btn>
+      <v-btn outlined elevation="6" x-large>Start</v-btn>
       <v-spacer></v-spacer>
     </v-row>
   </v-container>
@@ -89,7 +91,7 @@ export default {
   text-align: justify;
 }
 .letras_centered {
-  color: black;
+  color: #0a043c;
   font-family: "Open Sans", sans-serif;
   font-size: 25px;
   font-weight: 600;

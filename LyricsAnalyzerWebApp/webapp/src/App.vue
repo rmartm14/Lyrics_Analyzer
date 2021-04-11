@@ -1,18 +1,14 @@
 <template>
-  <v-app class="app">
+  <v-app id="application" style="background-color: antiquewhite">
     <topBar></topBar>
-    <v-main class="pt-5" style="background-color:#ffe3de">
-      <fondo-initial></fondo-initial>
-    </v-main>
+    <router-view />
     <v-footer absolute padless>
       <customfooter> </customfooter>
     </v-footer>
   </v-app>
 </template>
-
 <script>
 import topBar from "./components/Bars/topBar.vue";
-import fondoInitial from "./components/fondos/fondoInitial.vue";
 import Customfooter from "./components/footer/footer.vue";
 
 export default {
@@ -20,7 +16,6 @@ export default {
 
   components: {
     topBar,
-    fondoInitial,
     Customfooter,
   },
 
@@ -29,9 +24,3 @@ export default {
   }),
 };
 </script>
-
-<style scoped>
-.app {
-  color: antiquewhite;
-}
-</style>
