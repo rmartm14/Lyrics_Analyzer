@@ -2,17 +2,28 @@
   <v-container class="fondo">
     <v-row>
       <v-col>
-        <h1 id="initTitle">
-          Lyrics Analyzer
-        </h1>
+        <h1 id="initTitle">Lyrics Analyzer</h1>
 
-        <h5 id="subInit">
-          A place where we love to analyze music
-        </h5>
+        <h5 id="subInit" class="mb-4 mt-4">A place where we love to analyze music</h5>
+        <p class="ml-8" >
+          This is the TFG web app result that will give you several classifiers
+          in order to collect the data that you insert in some TextBoxes and
+          forms.
+        </p>
       </v-col>
-      <v-col>
-        <v-img class="imgRight" :src="this.image" />
-      </v-col>
+    </v-row>
+    <v-row class="col-10 ml-4" align-center>
+      <v-spacer/>
+      <v-spacer/>
+
+      <v-img
+        height="400px"
+        width="300px"
+        class="photo"
+        src="https://interactivo.eluniversal.com.mx/2016/rolling-stones/img/curiosidades/logo.png"
+        
+      ></v-img>
+      <v-spacer/>
     </v-row>
   </v-container>
 </template>
@@ -59,8 +70,8 @@ export default {
   font-size: 60px;
   font-weight: 600;
   line-height: 32px;
-  margin: 100px 30px 4px 30px;
-  text-align: left;
+  margin: 30px 30px 4px 30px;
+
 }
 #subInit {
   color: #03506f;
@@ -69,14 +80,16 @@ export default {
   font-weight: 600;
   line-height: 40px;
   margin: 10px 30px 0px 30px;
-  text-align: left;
+
 }
 .fondo {
   background-color: "#ffe3de";
+  text-align: center;
 }
-.imgRight {
-  height: 600px;
-  width: 600px;
-  margin-top: 70px;
+.photo {
+  background: #b0afac;
+  padding: 14px;
+  border: 12px solid #0a043c;
+  
 }
 </style>
