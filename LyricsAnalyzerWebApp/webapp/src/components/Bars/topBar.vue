@@ -13,6 +13,7 @@
       <v-btn color="#a3ddcb" outlined v-on:click="goToDetect()"> Detect Song </v-btn>
       <v-btn color="#a3ddcb" class="ml-2" outlined v-on:click="goToArtist()"> Artist</v-btn>
       <v-btn color="#a3ddcb" class="ml-2" outlined v-on:click="goToAbout()"> About</v-btn>
+
     </v-app-bar>
   </div>
 </template>

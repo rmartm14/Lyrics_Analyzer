@@ -1,5 +1,6 @@
 <template>
   <v-container class="fondo">
+
     <v-row>
       <v-col>
         <h1 id="initTitle">Lyrics Analyzer</h1>
@@ -37,29 +38,15 @@ export default {
       {
         id: 1,
         src: require("./../../assets/beatlesAR.jpg"),
+        alt: "The Beatles",
       },
       {
         id: 2,
         src: require("./../../assets/RollingStones.jpg"),
+        alt: "Rolling Stones",
       },
     ],
-    image: require("./../../assets/beatlesAR.jpg"),
   }),
-  mounted() {
-    setInterval(this.switchImage(), 3000);
-  },
-  methods: {
-    switchImage() {
-      if (this.photoIndex < this.images.length) {
-        this.photoIndex = this.photoIndex + 1;
-        console.log("aqui");
-      } else {
-        this.photoIndex = 0;
-        console.log("alli");
-      }
-      this.image = this.images[this.photoIndex].src;
-    },
-  },
 };
 </script>
 
@@ -81,6 +68,24 @@ export default {
   line-height: 40px;
   margin: 10px 30px 0px 30px;
 
+}
+.letras {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 40px;
+  margin: 10px 30px 0px 30px;
+  text-align: justify;
+}
+.letras_centered {
+  color: #0a043c;
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 40px;
+  margin: 10px 30px 0px 30px;
+  text-align: center;
 }
 .fondo {
   background-color: "#ffe3de";
