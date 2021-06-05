@@ -7,10 +7,9 @@
 <script>
 import topBar from "../components/Bars/topBar.vue"
 export default {
-    name: "about",
+    name: "detect",
     components: {
         topBar
     }
 }
 </script>
-
