@@ -21,7 +21,7 @@ def ping_pong():
 
 @app.route('/hello', methods=['GET'])
 def first():
-    return jsonify("Davies")
+    return jsonify("The Beatles")
 
 
 if __name__ == '__main__':

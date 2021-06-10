@@ -41,17 +41,20 @@
                 
                 <v-row class="ml-3 mt-2 mb-3">
                     
-                    <v-btn color="#a3ddcb" class="ml-2 back-color" outlined> Detectar Artista </v-btn>
+                    <v-btn color="#a3ddcb" class="ml-2 back-color" outlined v-on:click="goToDefinition()"> Detectar Artista </v-btn>
                 </v-row>
             </v-container>
             </v-card>
+            {{ result }}
         </form>
     </div>
 </template>
 
 <script>
 import topBar from "../components/Bars/topBar.vue"
-import dialogInfoClass from "../components/dialogs/masInfoClasificadores.vue"
+import dialogInfoClass from "../components/dialogs/masInfoClasificadores.vue";
+import axios from "axios";
+
 export default {
     name: "detect",
     components: {
@@ -62,8 +65,14 @@ export default {
       return {
         clasif: "",
         letra:"",
+        result: "",
       }
     },
+ methods: {
+    goToDefinition(){
+      axios.get('http://127.0.0.1:5000/hello').then(response => (this.result = response.data));
+    }
+ }
 }
 </script>
 <style scoped>
